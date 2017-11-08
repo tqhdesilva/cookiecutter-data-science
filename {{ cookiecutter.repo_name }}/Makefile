@@ -43,6 +43,15 @@ sync_data_to_minio:
 sync_data_from_minio:
 	mc mirror --force $(BUCKET)/$(PROJECT_NAME)/data data/
 
+## Create virtualenv using virtualenvwrapper
+venv:
+	mkvirtualenv -r requirements.txt -a . $(PROJECT_NAME)
+
+## Create ipykernel for use in jupyter
+ipykernel:
+	workon $(PROJECT_NAME)
+	python -m ipykernel install --user --name=$(PROJECT_NAME)
+
 ## Set up python interpreter environment
 create_environment:
 ifeq (True,$(HAS_CONDA))
