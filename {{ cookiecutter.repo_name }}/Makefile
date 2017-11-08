@@ -36,12 +36,12 @@ lint:
 	flake8 --exclude=lib/,bin/,docs/conf.py .
 
 ## Upload Data to S3
-sync_data_to_s3:
-	s3cmd sync data/ s3://$(Bucket)/$(PROJECT_NAME)/data
+sync_data_to_minio:
+	mc mirror --force data/ $(Bucket)/$(PROJECT_NAME)/data
 
 ## Download Data from S3
-sync_data_from_s3:
-	s3cmd sync s3://$(Bucket)/$(PROJECT_NAME)/data data/
+sync_data_from_minio:
+	mc mirror --force $(Bucket)/$(PROJECT_NAME)/data data/
 
 ## Set up python interpreter environment
 create_environment:

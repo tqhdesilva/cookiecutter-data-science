@@ -10,7 +10,7 @@ _A logical, reasonably standardized, but flexible project structure for doing an
 -----------
  - Python 2.7 or 3.5
  - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 1.4.0: This can be installed with pip by or conda depending on how you manage your Python packages:
- - s3cmd
+ - minio client
 
 ``` bash
 $ pip install cookiecutter
